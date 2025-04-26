@@ -2,6 +2,7 @@ import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {deletePost} from '../redux/postsSlice'
+import { toast } from 'react-hot-toast';
 
 const AdminDashboard = () => {
 
@@ -11,13 +12,13 @@ const AdminDashboard = () => {
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this post?')){
       dispatch(deletePost(id));
-      alert('Post deleted successfully!');
+      toast.success('Post deleted successfully!');
     }
   }
 
   return (
     <div className='p-4 sm:p-6 max-w-6xl mx-auto'>
-      <div className='flex flex-col sm:felx-row justify-between items-center mb-6'>
+      <div className='flex flex-col sm:flex-row justify-between items-center mb-6'>
         <h1 className='text-2xl sm:text-3xl font-bold mb-4'>
           Admin Dashboard
         </h1>
