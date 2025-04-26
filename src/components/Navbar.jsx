@@ -21,18 +21,12 @@ const Navbar = () => {
     }
 
   return (
-    <nav className='bg-black text-white shadow-md px-1 md:px-6 py-4'>
+    <nav className='bg-black text-white shadow-md px-6 py-4'>
       <div className='max-w-6xl mx-auto flex justify-between items-center'>
         <div className='text-sm md:text-lg font-bold'>
           <Link to='/' onClick={() => setIsMenuOpen(false)}>📰 MyBlog</Link>
         </div>
-        <div>
-          <input type="search" placeholder="Search..." className="px-2 py-1 rounded text-sm bg-gray-700 w-[150px] md:w-[250px] focus:outline-none" />
-          <button
-            className='bg-blue-500 text-sm md:text-md px-2 py-1 mx-2 rounded hover:bg-blue-600 active:bg-blue-700 cursor-pointer'>
-            Search
-          </button>
-        </div>
+        
         <div>
           <ul className='hidden md:flex space-x-4'>
             <li><NavLink to='/' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Home</NavLink></li>
