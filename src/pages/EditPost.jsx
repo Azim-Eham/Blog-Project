@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updatePost } from '../redux/postsSlice'
 import { useParams, useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast';
 
 const EditPost = () => {
 
@@ -29,11 +30,12 @@ const EditPost = () => {
     e.preventDefault();
 
     if (!title || !excerpt || !content || !thumbnail) {
-      alert("All fields are required!");
+      toast.error('Please fill all fields.');
       return;
     }
 
     dispatch(updatePost({ id, title, excerpt, content, thumbnail }));
+    toast.success('Post updated successfully! 🎉');
     navigate('/admin');
   };
 

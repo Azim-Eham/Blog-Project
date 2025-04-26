@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {addPost} from '../redux/postsSlice'
 import { v4 as uuidv4 } from 'uuid'
+import { toast } from 'react-hot-toast';
 
 const CreatePost = () => {
 
@@ -31,6 +32,13 @@ const CreatePost = () => {
     };
 
     dispatch(addPost(newPost));
+    toast.success('Post created successfully! 🎉');
+
+    setTitle('');
+    setExcerpt('');
+    setContent('');
+    setThumbnail('');
+    
     navigate('/admin')
   }
 
