@@ -10,7 +10,6 @@ While building this project, I sought guidance and explored various resources to
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
-- [Usage](#usage)
 - [Lessons Learned](#lessons-learned)
 
 
