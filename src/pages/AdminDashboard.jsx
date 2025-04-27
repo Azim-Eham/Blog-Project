@@ -44,7 +44,7 @@ const AdminDashboard = () => {
                   />
                 )}
                 <h2 className='text-xl font-semibold mb-2'>{post.title}</h2>
-                <p className='text-gray-600 text-sm'>{post.content}</p>
+                <p className='text-gray-600 text-sm'>{post.excerpt.slice(0, 100)}</p>
               </div>
               <div className="flex mt-4 space-x-4">
                 <Link 

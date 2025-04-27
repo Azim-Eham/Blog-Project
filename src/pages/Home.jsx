@@ -11,7 +11,7 @@ const Home = () => {
 
   const filteredPosts = posts.filter(post => 
     post.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
-    post.excert.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+    post.excerpt.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
   );
   
   return (
@@ -30,7 +30,7 @@ const Home = () => {
       {filteredPosts.length === 0 ? (
         <p className="text-center text-gray-600">No posts found.</p>
       ) : (
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {filteredPosts.map((post) => (
             <div key={post.id} className="border rounded-lg p-4 shadow hover:shadow-lg transition-all">
               {post.thumbnail && (

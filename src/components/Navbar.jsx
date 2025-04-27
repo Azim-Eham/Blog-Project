@@ -33,7 +33,7 @@ const Navbar = () => {
             <li><NavLink to='/about' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>About</NavLink></li>
             <li><NavLink to='/admin' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Dashboard</NavLink></li>
             {isAuthenticated ? (
-              <li><button onClick={handleLogout} className='bg-red-500 px-4 py-2 rounded'>Logout</button></li>
+              <li><button onClick={handleLogout} className='bg-red-500 px-3 py-1 rounded hover:bg-red-600 cursor-pointer'>Logout</button></li>
             ) : (
               <li><NavLink to='/login' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Login</NavLink></li>
             )}

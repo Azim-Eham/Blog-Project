@@ -16,7 +16,7 @@ const CreatePost = () => {
   const [thumbnail, setThumbnail] = useState('');
 
   const handleSubmit = e => {
-    e.preventDefalut();
+    e.preventDefault();
 
     if (!title || !excerpt || !content || !thumbnail) {
       alert('Please fill in all fields');
@@ -47,7 +47,7 @@ const CreatePost = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setThumbnail(reader.result); // base64 encoded string
+        setThumbnail(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -62,7 +62,7 @@ const CreatePost = () => {
           <input 
             type="file" 
             accept="image/*" 
-            className="w-full border rounded p-2"
+            className="w-[20vw] border rounded p-2"
             onChange={handleThumbnailChange}
           />
         </div>

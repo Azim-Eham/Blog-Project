@@ -20,7 +20,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/admin' element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
-        <Route path='/admin/create' element={<PrivateRoute><CreatePost /></PrivateRoute>} />
+        <Route path='/create' element={<PrivateRoute><CreatePost /></PrivateRoute>} />
         <Route path='/admin/edit/:id' element={<PrivateRoute><EditPost /></PrivateRoute>} />
         <Route path='*' element={<PageNotFound />} />
       </Route>

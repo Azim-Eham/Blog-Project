@@ -26,7 +26,7 @@ const PostDetail = () => {
         <img 
           src={post.thumbnail} 
           alt="Post Thumbnail" 
-          className="w-full h-64 object-cover rounded-lg mb-6"
+          className="w-[80vw] h-[80vh] object-cover rounded-lg mb-6"
         />
       )}
 

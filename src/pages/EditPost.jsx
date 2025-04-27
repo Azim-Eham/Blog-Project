@@ -26,6 +26,17 @@ const EditPost = () => {
     }
   }, [post]);
 
+  const handleThumbnailChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setThumbnail(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,6 +49,7 @@ const EditPost = () => {
     toast.success('Post updated successfully! 🎉');
     navigate('/admin');
   };
+
 
   if (!post) {
     return <div className="p-6">Post not found.</div>;

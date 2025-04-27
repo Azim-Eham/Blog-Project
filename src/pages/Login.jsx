@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Example credentials: username = "admin", password = "password"
-    if (username === 'admin' && password === 'a9d2#Fjsl13!') {
-      // Save login status in localStorage
-      localStorage.setItem('isAdminLoggedIn', 'true');
-      navigate('/admin'); // Redirect to Admin Dashboard
+
+    if (username === 'admin' && password === 'AzimEham3426') {
+      dispatch(login());
+      navigate('/admin');
     } else {
-      alert('Invalid credentials');
+      alert('Invalid Credentials');
     }
   };
 
@@ -30,7 +32,7 @@ const Login = () => {
           className="border p-2 rounded"
         />
         <input
-          type="password"
+          type="password" 
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
