@@ -14,7 +14,7 @@ const PostDetail = () => {
   }
 
   return (
-    <div className='p-6 msx-w-4xl mx-auto'>
+    <div className='p-6 max-w-4xl mx-auto'>
       <button 
         onClick={() => navigate(-1)} 
         className="mb-6 bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition-all"
@@ -26,7 +26,7 @@ const PostDetail = () => {
         <img 
           src={post.thumbnail} 
           alt="Post Thumbnail" 
-          className="w-[80vw] h-[80vh] object-cover rounded-lg mb-6"
+          className="w-full h-[80vh] object-cover rounded-lg mb-6"
         />
       )}
 
