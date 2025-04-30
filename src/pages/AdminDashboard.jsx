@@ -40,11 +40,11 @@ const AdminDashboard = () => {
                   <img 
                     src={post.thumbnail} 
                     alt="Thumbnail" 
-                    className="h-40 w-full object-cover mb-4 rounded"
+                    className="h-50 md:h-60 lg:h-50 w-full object-cover mb-4 rounded"
                   />
                 )}
                 <h2 className='text-xl font-semibold mb-2'>{post.title}</h2>
-                <p className='text-gray-600 text-sm'>{post.excerpt.slice(0, 100)}</p>
+                <p className='text-gray-600 text-sm'>{post.excerpt.slice(0, 100)}...</p>
               </div>
               <div className="flex mt-4 space-x-4">
                 <Link 

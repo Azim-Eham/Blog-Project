@@ -15,7 +15,7 @@ const Home = () => {
   );
   
   return (
-    <div className='px-3 py-6 max-w-5xl mx-auto'>
+    <div className='px-3 py-6 max-w-6xl mx-auto'>
       <h1 className='text-3xl font-bold mb-4 text-center'>
       📰 Blog Posts
       </h1>
@@ -37,7 +37,7 @@ const Home = () => {
                 <img 
                   src={post.thumbnail} 
                   alt="Thumbnail" 
-                  className="h-40 w-full object-cover mb-4 rounded"
+                  className="h-50 md:h-60 lg:h-50 w-full object-cover mb-4 rounded"
                 />
               )}
               <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
