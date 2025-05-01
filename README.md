@@ -1,6 +1,12 @@
 # Blog Website with Admin Panel
 
-This project is a **Blog Website** built using **React**, **Redux Toolkit**, and **React Router**. It includes both a **public blog** for users to read posts and an **admin panel** where authorized users can create, edit, and delete blog posts. The project uses **Local Storage** to simulate a backend and persist data, making it fully functional without needing a server.
+A fully functional blog website built with **React**, featuring:
+- 🛠️ CRUD operations for blog posts
+- 🔐 Admin-only dashboard and controls
+- 🌙 Dark mode toggle using Tailwind CSS v4.1
+- 🔄 Redux Toolkit for global state management
+- 🔗 React Router v6 for navigation
+- 💾 localStorage for theme and content persistence
 
 While building this project, I sought guidance and explored various resources to improve my understanding of certain concepts. The following README will describe the features I implemented, the technologies I used, and what I learned in the process.
 
@@ -19,20 +25,12 @@ This is a **Blog Website** with both a **public-facing blog** and an **admin pan
 
 ## Features
 
-- **Public Blog**:  
-  - Users can view, read, and search for blog posts.
-  - Each post includes a title, excerpt, and a detailed page with full content.
-  
-- **Admin Panel**:  
-  - **Create Posts**: Admin users can create new posts with a title, content, and an optional excerpt.
-  - **Edit Posts**: Admin users can modify existing posts.
-  - **Delete Posts**: Admin users can remove posts.
-  
-- **Authentication Simulation**:  
-  - While there is no real back-end authentication, the admin panel has a simulated login system to manage access.
-  
-- **Responsive Design**:  
-  - The app is fully responsive, built with **Tailwind CSS**, and adjusts to different screen sizes.
+- View all blog posts on the home page
+- Read individual posts in detail
+- Admin panel to create, edit, and delete posts
+- Simple login system for admin access
+- Dark mode toggle (theme persists using `localStorage`)
+- Fully responsive design with Tailwind CSS v4.1
 
 ## Technologies Used
 
@@ -40,7 +38,7 @@ This is a **Blog Website** with both a **public-facing blog** and an **admin pan
 - **Redux Toolkit**: To manage global state for the blog posts.
 - **React Router**: For handling client-side routing between the public blog and admin panel.
 - **Local Storage**: Used to simulate data persistence.
-- **Tailwind CSS**: To make the website visually appealing and responsive.
+- **Tailwind CSS**: To make the website visually appealing and responsive and for dark mode.
 
 ## Lessons Learned
 While working on this project, I encountered and overcame several challenges that helped me grow as a developer:
