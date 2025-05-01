@@ -1,11 +1,11 @@
 import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const PostDetail = () => {
 
   const {id} = useParams();
-  const navigate = useNavigate();
+
 
   const post = useSelector(state => state.posts.posts.find(p => p.id === id));
 
@@ -16,18 +16,12 @@ const PostDetail = () => {
   return (
     <div className='min-h-screen bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200'>
       <div className='p-6 max-w-6xl mx-auto'>
-        <button 
-          onClick={() => navigate(-1)} 
-          className="mb-6 bg-gray-200 dark:bg-gray-500 px-4 py-2 rounded hover:bg-gray-300 transition-all"
-        >
-          ← Go Back
-        </button>
 
         {post.thumbnail && (
           <img 
             src={post.thumbnail} 
             alt="Post Thumbnail" 
-            className="w-full h-[30vh] md:h-[50vh] lg:h-[60vh] object-cover rounded-lg mb-6"
+            className="w-full h-[30vh] md:h-[40vh] lg:h-[80vh] object-cover rounded-lg mb-6"
           />
         )}
 
