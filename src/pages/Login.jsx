@@ -21,34 +21,37 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-[80vh] text-center">
-      <div className='w-96 p-6 bg-gray-200 shadow-md rounded-lg'>
-      <h1 className="text-3xl font-bold mb-4">Admin Login</h1>
-      <form onSubmit={handleLogin} className="space-y-4">
-        <div>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="border p-2 rounded bg-white"
-        />
+    <div className='min-h-screen bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200'>
+      <div className="flex items-center justify-center h-[80vh] text-center">
+        <div className='w-96 p-6 bg-gray-200 dark:bg-gray-700 shadow-md rounded-lg'>
+        <h1 className="text-3xl font-bold mb-4">Admin Login</h1>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="border p-2 rounded bg-white dark:text-gray-800"
+          />
+          </div>
+          <div>
+          <input
+            type="password" 
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="border p-2 rounded bg-white dark:text-gray-800"
+          />
+          </div>
+          <button type="submit" className="bg-blue-600 text-white p-2 w-[200px] rounded hover:bg-blue-700">
+            Login
+          </button>
+        </form>
         </div>
-        <div>
-        <input
-          type="password" 
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 rounded bg-white"
-        />
-        </div>
-        <button type="submit" className="bg-blue-600 text-white p-2 w-[200px] rounded hover:bg-blue-700">
-          Login
-        </button>
-      </form>
       </div>
     </div>
+    
   );
 };
 

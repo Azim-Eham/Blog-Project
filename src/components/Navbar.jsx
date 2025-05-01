@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import {Link, NavLink, useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {logout} from '../redux/authSlice'
+import useDarkMode from '../hooks/useDarkMode'
 
 const Navbar = () => {
 
+
+    const [darkMode, setDarkMode] = useDarkMode()
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const dispatch = useDispatch();
@@ -21,24 +24,32 @@ const Navbar = () => {
     }
 
   return (
-    <nav className='bg-black text-white shadow-md px-6 py-4'>
+    <nav className='bg-black text-white shadow-md px-6 py-4 dark:bg-gray-900'>
       <div className='max-w-6xl mx-auto flex justify-between items-center'>
         <div className='text-sm md:text-lg font-bold'>
           <Link to='/' onClick={() => setIsMenuOpen(false)}>📰 MyBlog</Link>
         </div>
         
         <div>
-          <ul className='hidden md:flex space-x-4'>
-            <li><NavLink to='/' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Home</NavLink></li>
-            <li><NavLink to='/about' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>About</NavLink></li>
-            <li><NavLink to='/admin' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Dashboard</NavLink></li>
+          <ul className='hidden md:flex space-x-4 justify-center items-center'>
+            <li><NavLink to='/' className={({isActive}) => `hover:text-blue-400 font-medium ${isActive ? 'text-blue-500 font' : ''}`}>Home</NavLink></li>
+            <li><NavLink to='/about' className={({isActive}) => `hover:text-blue-400 font-medium ${isActive ? 'text-blue-500' : ''}`}>About</NavLink></li>
+            <li><NavLink to='/admin' className={({isActive}) => `hover:text-blue-400 font-medium ${isActive ? 'text-blue-500' : ''}`}>Dashboard</NavLink></li>
             {isAuthenticated ? (
               <li><button onClick={handleLogout} className='bg-red-500 px-3 py-1 rounded hover:bg-red-600 cursor-pointer'>Logout</button></li>
             ) : (
               <li><NavLink to='/login' className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Login</NavLink></li>
             )}
+            <li><button
+              onClick={() => setDarkMode(!darkMode)}
+              className="px-3 py-1 rounded bg-gray-400 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+            >
+              {darkMode ? '☀️ Light' : '🌙 Dark'}
+            </button></li>
           </ul>
         </div>
+
+        
 
 
         <button onClick={toggleMenu} className='md:hidden focus:outline-none'>
@@ -58,18 +69,19 @@ const Navbar = () => {
       </div>
       {isMenuOpen && (
         <div className="md:hidden mt-4 flex flex-col space-y-3">
-          <NavLink to='/' onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Home</NavLink>
-          <NavLink to="/about" onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>About</NavLink>
+          <NavLink to='/' onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 font-medium ${isActive ? 'text-blue-500' : ''}`}>Home</NavLink>
+          <NavLink to="/about" onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 font-medium ${isActive ? 'text-blue-500' : ''}`}>About</NavLink>
           {isAuthenticated && (
-            <NavLink to="/admin" onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Dashboard</NavLink>
+            <NavLink to="/admin" onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 font-medium ${isActive ? 'text-blue-500' : ''}`}>Dashboard</NavLink>
           )}
           {!isAuthenticated ? (
-            <NavLink to="/login" onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Login</NavLink>
+            <NavLink to="/login" onClick={toggleMenu} className={({isActive}) => `hover:text-blue-400 font-medium ${isActive ? 'text-blue-500' : ''}`}>Login</NavLink>
           ) : (
             <button onClick={handleLogout} className={({isActive}) => `hover:text-blue-400 ${isActive ? 'text-blue-500' : ''}`}>Logout</button>
           )}
         </div>
       )}
+      
     </nav>
   )
 }
